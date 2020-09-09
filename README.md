@@ -17,14 +17,14 @@ docker pull zanderchao/datax-admin:v2  建议使用
 ```
 
 ##datax-admin启动命令
-
+```
 PORT 代表admin端口 启动时需要和映射端口保持一致
 MYSQL_SERVICE_HOST 代表数据库host，可直接填写地址
 MYSQL_SERVICE_PORT 代表访问端口，基本都是3306 填写
 MYSQL_USER 代表数据库 用户名
 MYSQL_PASSWORD 代表数据库 密码
-DB_DATABASE  代码同步数据存储库名
-
+DB_DATABASE  初始化数据库 名称
+```
 ```
 docker run -i -d -p 2020:2020 \
 --name datax-admin \
@@ -51,10 +51,10 @@ docker pull zanderchao/datax-executor:v2  建议使用
 ```
 
 ## datax-executor启动命令
-
+```
 PORT 代表executor端口 
 ADDRESSES 代表admin服务器地址 eg：http://172.10.0.2:2020
-
+```
 ```
 docker run -i -d -p 2020:2020 \
 --name datax-admin \
@@ -72,4 +72,15 @@ java -jar datax-admin-2.1.2.jar \
 ## 集群部署暂未测试。
 ```
 集群正在在测试。
+```
+## 访问
+
+```
+    浏览器访问datax-admin 运行时配置的映射端口
+    http://127.0.0.1:port/index.html 初始化密码123456
+```
+
+## FAQ
+```
+数据库初始化，可在https://github.com/WeiYe-Jing/datax-web项目中https://github.com/WeiYe-Jing/datax-web/tree/master/bin/db 中找到sql文件，手动进行初始化
 ```
