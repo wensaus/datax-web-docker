@@ -1,5 +1,5 @@
 # datax-web-docker
-此项目只用于使用容器化部署docker-web，且不够完善，正常使用没有问题。
+此项目只用于使用容器化部署docker-web
 源项目地址：https://github.com/WeiYe-Jing/datax-web
 希望大家多多支持原作者
 
@@ -7,6 +7,9 @@
 ```
 自行下载datax代码 编译
 编译前pom 文件中的 <modules> 注释不需要的数据源
+
+替换datax项目中的  /core/src/main/bin/ 替换3个文件 文件在项目python3文件夹下
+
 编译命令
 mvn clean package assembly:assembly -Dmaven.test.skip=true
 等待编译完成 生成/target/datax.tar.gz
