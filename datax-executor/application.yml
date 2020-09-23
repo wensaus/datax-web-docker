@@ -1,0 +1,30 @@
+# web port
+server:
+  port: ${PORT:}
+
+# log config
+logging:
+  config: classpath:logback.xml
+  path: ${data.path:/home/}/applogs/executor/jobhandler
+
+datax:
+  job:
+    admin:
+      ### datax admin address list, such as "http://address" or "http://address01,http://address02"
+#      addresses: http://172.10.0.2:2020
+      addresses: ${ADDRESSES:}
+    executor:
+      appname: datax-executor
+      ip:
+      port: ${executor.port:9999}
+      ### job log path
+      logpath: ${data.path:/home}/applogs/executor/jobhandler
+      ### job log retention days
+      logretentiondays: 30
+    ### job, access token
+    accessToken:
+
+  executor:
+    jsonpath: ${json.path:/opt/datax-web-2.1.2/modules/datax-executor/json}
+
+  pypath: ${python.path:/opt/datax/bin/datax.py}
