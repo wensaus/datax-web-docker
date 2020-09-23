@@ -18,8 +18,16 @@ mvn clean package assembly:assembly -Dmaven.test.skip=true
 # 编译datax-web
 ```
 自行下载datax-web代码 编译
+
 替换datax-admin/pom.xml 替换文件在项目各自对应的文件夹中
+替换datax-admin/src/main/resources/application.yml 替换文件在项目各自对应的文件夹中
+替换datax-admin/src/main/resources/bootstrap.properties 替换文件在项目各自对应的文件夹中
+
+
+替换datax-executor/src/main/resources/application.yml 替换文件在项目各自对应的文件夹中
 新增datax-executor/src/main/resources/bootstrap.properties 文件，新增文件内容在项目各自对应的文件夹中
+替换datax-executor/pom.xml 替换文件在项目各自对应的文件夹中
+
 编译命令
 mvn clean package install -Dmaven.test.skip=true
 编译成功后会datax-executor datax-admin 文件夹下会生成target各自运行的jar
@@ -82,7 +90,7 @@ docker run -i -d -p 2020:2020 \
 --name datax-admin \
 --net datax-network \
 --ip 172.10.0.2  zanderchao/datax-executor:v2  \
-java -jar datax-admin-2.1.2.jar \
+java -jar datax-executor-2.1.2.jar \
 --PORT=$(PORT) \
 --ADDRESSES=$(ADDRESSES)
 ```
