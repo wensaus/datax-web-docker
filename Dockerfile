@@ -12,7 +12,7 @@ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pymysql && \
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pymssql && \
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple psycopg2 && \
 rm /usr/bin/python && \
-ln -s /usr/bin/python3.6 /usr/bin/python
+ln -s /usr/bin/python3 /usr/bin/python
 
 WORKDIR /opt/
 
